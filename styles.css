@@ -1,0 +1,333 @@
+/* 通用样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #6c5ce7;
+    color: white;
+    text-align: center;
+    padding: 3em 0;
+    border-bottom: 10px solid #4e42b5;
+}
+
+header h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.3em;
+    margin-top: 0.5em;
+    font-family: 'Nunito', sans-serif;
+    color: #ddd;
+}
+
+nav {
+    background-color: #2d3436;
+    text-align: center;
+    padding: 1em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1.2em;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav a.active {
+    background-color: #6c5ce7;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+nav a:hover {
+    background-color: #6c5ce7;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 4em auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2em;
+    padding: 0 20px;
+}
+
+.post {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2em;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+}
+
+.post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.post h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #333;
+    font-family: 'Nunito', sans-serif;
+}
+
+.post p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 1.5em;
+    line-height: 1.8;
+}
+
+.post a {
+    color: #6c5ce7;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.post t {
+    color: #6c5ce7;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+.back-to-home {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.back-to-home a {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #2d3436;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-home a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* main-about元素定义项 */
+.testcon {
+    max-width: 800px;
+    margin: 4em auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testpost {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2em;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor:pointer;
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.t-between {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* main-about元素定义项结束 */
+
+footer {
+    background-color: #2d3436;
+    color: white;
+    text-align: center;
+    padding: 2em;
+    font-size: 1.1em;
+    font-family: 'Nunito', sans-serif;
+    margin-top: auto;
+}
+
+/* 加入页面加载动画 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ad-container {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 2em;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.ad-container.hidden {
+    transform: translateX(120%);
+    opacity: 0;
+}
+
+.ad-container.collapsed {
+    transform: translateY(-50%) translateX(calc(100% - 40px));
+}
+
+.ad-toggle {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.ad-toggle:hover {
+    background-color: #5849c4;
+}
+
+.ad-content {
+    text-align: center;
+}
+
+.ad-content h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 0.5em;
+    font-family: 'Nunito', sans-serif;
+}
+
+.ad-content p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 1em;
+}
+
+.ad-features {
+    margin: 1.5em 0;
+}
+
+.ad-features p {
+    margin: 0.5em 0;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.ad-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #6c5ce7;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ad-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.timeline li {
+    margin: 0 10px;
+}
+
+.timeline li .comment {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+.testpost img {
+    width: 50%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.fullscreen-image img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
